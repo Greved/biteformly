@@ -1,0 +1,9 @@
+# Codex CLI run configuration for this repository
+# Allows writing within the workspace without approval prompts.
+
+approval_policy: never        # no per-action approvals
+sandbox_mode: workspace-write # read/write inside repo; no outside writes
+network_access: restricted    # no external network unless changed explicitly
+
+# Optional: set default shell (uncomment if desired)
+# shell: powershell

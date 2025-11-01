@@ -1,0 +1,42 @@
+# General
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.csproj.user
+
+# .NET
+[Bb]in/
+[Oo]bj/
+TestResults/
+*.trx
+*.coverage*
+
+# Node
+node_modules/
+pnpm-lock.yaml
+yarn.lock
+npm-debug.log*
+
+# Build outputs
+dist/
+out/
+
+# Logs
+*.log
+logs/
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Coverage
+coverage/
+
