@@ -1,0 +1,9 @@
+{
+  "name": "@biteform/config",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Shared linting/formatting/tsconfig templates for BiteForm web projects",
+  "main": "index.js",
+  "license": "UNLICENSED"
+}
+

@@ -1,0 +1,15 @@
+{
+  "extends": "../../packages/config/tsconfig/base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["src/components/*"],
+      "@/lib/*": ["src/lib/*"],
+      "@/state/*": ["src/state/*"]
+    },
+    "jsx": "react-jsx"
+  },
+  "include": ["next-env.d.ts", "src/**/*", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
+

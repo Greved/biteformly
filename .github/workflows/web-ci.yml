@@ -1,0 +1,42 @@
+name: Web CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  web:
+    name: Web build/lint/test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: 'pnpm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Install
+        run: pnpm install --frozen-lockfile=false
+
+      - name: Lint (web)
+        if: ${{ hashFiles('apps/web/package.json') != '' }}
+        run: pnpm --filter web lint
+
+      - name: Build (web)
+        if: ${{ hashFiles('apps/web/package.json') != '' }}
+        run: pnpm --filter web build
+
+      - name: Test (web)
+        if: ${{ hashFiles('apps/web/package.json') != '' }}
+        run: pnpm --filter web test -- --ci
+
